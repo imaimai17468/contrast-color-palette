@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { MainLayout } from "@/components/layout/main-layout";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Contrast Color Palette",
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <MainLayout>{children}</MainLayout>
+        <Analytics />
       </body>
     </html>
   );
