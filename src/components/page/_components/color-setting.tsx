@@ -45,7 +45,7 @@ export const ColorSetting: React.FC<Props> = ({ baseColors, numberOfColors, inde
         </div>
         <Slider
           value={[_numberOfColors]}
-          max={10}
+          max={11}
           step={1}
           min={2}
           onValueChange={(value) => setNumberOfColors(value[0])}
