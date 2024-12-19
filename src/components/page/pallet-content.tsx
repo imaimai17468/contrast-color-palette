@@ -6,7 +6,7 @@ export const PalletContent: React.FC = () => {
   const { baseColors, numberOfColors, selectedColorIndex, lightThemeColor, darkThemeColor } = searchParamsCache.all();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[300px,auto] gap-16 p-16">
+    <div className="grid grid-cols-1 md:grid-cols-[300px,auto] gap-16 p-4 sm:p-16">
       <ColorSetting baseColors={baseColors} numberOfColors={numberOfColors} index={selectedColorIndex} />
       <ColorPallet
         baseColors={baseColors}
