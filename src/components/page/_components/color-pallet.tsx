@@ -6,6 +6,7 @@ import { useQueryState } from "nuqs";
 import { useMemo, useState } from "react";
 import { searchParams } from "../../../utils/search-params";
 import { generateSigmoidData } from "../utils/sigmoid";
+import { ExportButton } from "./export-button";
 import { GithubCard } from "./github-card";
 import { LightnessChart } from "./lightness-chart";
 import { Pallet } from "./pallet";
@@ -127,9 +128,12 @@ export const ColorPallet: React.FC<Props> = ({
           </div>
         ))}
       </div>
-      <Button onClick={() => setNewBaseColors([...newBaseColors, "#000000"])} className="flex gap-2 w-fit">
-        <PlusCircleIcon /> Create Pallet
-      </Button>
+      <div className="flex gap-4">
+        <Button onClick={() => setNewBaseColors([...newBaseColors, "#000000"])} className="flex gap-2 w-fit">
+          <PlusCircleIcon /> Create Pallet
+        </Button>
+        <ExportButton baseColors={newBaseColors} lightnessValues={lightnessList.map((lightness) => lightness.y)} />
+      </div>
       <div className="flex gap-8">
         <VisibleMenu value={visible} onVisibleChange={setVisible} />
         <ThemeColorMenu
