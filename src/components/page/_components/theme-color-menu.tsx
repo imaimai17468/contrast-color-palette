@@ -25,12 +25,16 @@ export const ThemeColorMenu: React.FC<ThemeColorMenuProps> = ({ value, onColorCh
           Change Background Color
         </Button>
       </PopoverTrigger>
-      <PopoverContent side="right" sideOffset={8} className="flex gap-8 w-[500px] justify-center">
+      <PopoverContent
+        sideOffset={8}
+        className="flex flex-col sm:flex-row max-h-[500px] gap-8 w-fit sm:justify-center overflow-y-auto"
+      >
         <div className="flex flex-col gap-4">
           <p>Light theme BG color</p>
           <p className="text-sm text-muted-foreground">{lightColor.hex}</p>
           <ColorPicker
             color={lightColor}
+            hideInput={["rgb", "hsv"]}
             onChange={(color) => {
               setLightColor(color);
               onColorChange({ ...value, lightThemeColor: color.hex });
@@ -42,6 +46,7 @@ export const ThemeColorMenu: React.FC<ThemeColorMenuProps> = ({ value, onColorCh
           <p className="text-sm text-muted-foreground">{darkColor.hex}</p>
           <ColorPicker
             color={darkColor}
+            hideInput={["rgb", "hsv"]}
             onChange={(color) => {
               setDarkColor(color);
               onColorChange({ ...value, darkThemeColor: color.hex });
