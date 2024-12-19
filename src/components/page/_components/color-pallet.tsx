@@ -28,10 +28,6 @@ export const ColorPallet: React.FC<Props> = ({
   lightThemeColor,
   darkThemeColor,
 }) => {
-  const lightnessList = useMemo(() => {
-    return generateSigmoidData(numberOfColors);
-  }, [numberOfColors]);
-
   const [selectedIndex, setSelectedIndex] = useQueryState(
     "selectedColorIndex",
     searchParams.selectedColorIndex.withDefault(selectedColorIndex).withOptions({ shallow: false }),
@@ -55,6 +51,15 @@ export const ColorPallet: React.FC<Props> = ({
       .withDefault(darkThemeColor)
       .withOptions({ shallow: false, history: "push", throttleMs: 500 }),
   );
+
+  const [lightnessGain, setLightnessGain] = useQueryState(
+    "lightnessGain",
+    searchParams.lightnessGain.withDefault(0.5).withOptions({ shallow: false, history: "push" }),
+  );
+
+  const lightnessList = useMemo(() => {
+    return generateSigmoidData(numberOfColors, lightnessGain);
+  }, [numberOfColors, lightnessGain]);
 
   const [visible, setVisible] = useState<VisibilityUI>({
     heading: true,
@@ -139,7 +144,11 @@ export const ColorPallet: React.FC<Props> = ({
         />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-[1fr,auto] gap-8">
-        <LightnessChart lightnessList={lightnessList} />
+        <LightnessChart
+          lightnessList={lightnessList}
+          lightnessGain={lightnessGain}
+          onLightnessGainChange={setLightnessGain}
+        />
         <PalletLegend />
       </div>
       <GithubCard />
