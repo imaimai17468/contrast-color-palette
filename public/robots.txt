@@ -1,4 +1,12 @@
+# *
 User-agent: *
 Allow: /
+Disallow: /private/
+Disallow: /admin/
 
+# Host
+Host: https://contrast-color-palette.vercel.app/
+
+# Sitemaps
 Sitemap: https://contrast-color-palette.vercel.app/sitemap.xml
+Sitemap: https://contrast-color-palette.vercel.app/server-sitemap.xml
