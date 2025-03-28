@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   themeColor: "#ffffff",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/image/icon.png",
+    apple: "/image/icon.png",
   },
 };
 
