@@ -1,9 +1,9 @@
 import { Card } from "@/components/ui/card";
 
-export const PalletLegend: React.FC = () => {
+export const PaletteLegend: React.FC = () => {
   return (
     <Card className="h-fit w-fit p-4 flex flex-col gap-4">
-      <p className="text-lg font-bold">Pallet Legend</p>
+      <p className="text-lg font-bold">Palette Legend</p>
       <div className="flex flex-col items-center gap-2">
         <p className="text-xs text-muted-foreground">Lightness</p>
         <div className="w-16 h-16 rounded-md border bg-black" />

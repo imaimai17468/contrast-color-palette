@@ -9,8 +9,8 @@ import { generateSigmoidData } from "../utils/sigmoid";
 import { ExportButton } from "./export-button";
 import { GithubCard } from "./github-card";
 import { LightnessChart } from "./lightness-chart";
-import { Pallet } from "./pallet";
-import { PalletLegend } from "./pallet-legend";
+import { Palette } from "./palette";
+import { PaletteLegend } from "./palette-legend";
 import { ThemeColorMenu } from "./theme-color-menu";
 import { type VisibilityUI, VisibleMenu } from "./visibleMenu";
 
@@ -22,7 +22,7 @@ type Props = {
   darkThemeColor: string;
 };
 
-export const ColorPallet: React.FC<Props> = ({
+export const ColorPalette: React.FC<Props> = ({
   baseColors,
   numberOfColors,
   selectedColorIndex,
@@ -115,7 +115,7 @@ export const ColorPallet: React.FC<Props> = ({
             </div>
             <div className="flex gap-4 overflow-x-auto">
               {lightnessList.map((lightness) => (
-                <Pallet
+                <Palette
                   key={lightness.x}
                   baseColor={baseColor}
                   lightness={lightness.y}
@@ -130,7 +130,7 @@ export const ColorPallet: React.FC<Props> = ({
       </div>
       <div className="flex gap-4">
         <Button onClick={() => setNewBaseColors([...newBaseColors, "#000000"])} className="flex gap-2 w-fit">
-          <PlusCircleIcon /> Create Pallet
+          <PlusCircleIcon /> Create Palette
         </Button>
         <ExportButton baseColors={newBaseColors} lightnessValues={lightnessList.map((lightness) => lightness.y)} />
       </div>
@@ -153,7 +153,7 @@ export const ColorPallet: React.FC<Props> = ({
           lightnessGain={lightnessGain}
           onLightnessGainChange={setLightnessGain}
         />
-        <PalletLegend />
+        <PaletteLegend />
       </div>
       <GithubCard />
     </div>

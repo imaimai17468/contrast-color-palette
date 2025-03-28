@@ -1,4 +1,4 @@
-import { PalletContent } from "@/components/page/pallet-content";
+import { PaletteContent } from "@/components/page/palette-content";
 import { searchParamsCache } from "@/utils/search-params";
 import type { SearchParams } from "nuqs/parsers";
 
@@ -9,5 +9,5 @@ type Props = {
 export default function Home({ searchParams }: Props) {
   searchParamsCache.parse(searchParams);
 
-  return <PalletContent />;
+  return <PaletteContent />;
 }

@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { contrastTextClassName } from "../utils/contrastTextClassName";
 import type { VisibilityUI } from "./visibleMenu";
 
-type PalletProps = {
+type PaletteProps = {
   baseColor: string;
   lightness: number;
   visible: VisibilityUI;
@@ -13,7 +13,7 @@ type PalletProps = {
   darkThemeColor: string;
 };
 
-export const Pallet: React.FC<PalletProps> = ({ baseColor, lightness, visible, lightThemeColor, darkThemeColor }) => {
+export const Palette: React.FC<PaletteProps> = ({ baseColor, lightness, visible, lightThemeColor, darkThemeColor }) => {
   const hexColor = useMemo(() => culcHexColor(baseColor, lightness), [baseColor, lightness]);
   const lightContrast = useMemo(() => wcagContrast(hexColor, lightThemeColor), [hexColor, lightThemeColor]);
   const darkContrast = useMemo(() => wcagContrast(hexColor, darkThemeColor), [hexColor, darkThemeColor]);

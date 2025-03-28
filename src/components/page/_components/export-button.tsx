@@ -27,7 +27,7 @@ export const ExportButton: React.FC<ExportButtonProps> = ({ baseColors, lightnes
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Export Color Pallet</DialogTitle>
+          <DialogTitle>Export Color Palette</DialogTitle>
           <DialogDescription>
             <p>You can copy in JSON or text format.</p>
           </DialogDescription>
