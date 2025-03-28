@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://contrast-color-palette.vercel.app/sitemap.xml

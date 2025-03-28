@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { JsonLd } from "@/components/json-ld";
 import { MainLayout } from "@/components/layout/main-layout";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -58,9 +59,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+      </head>
       <body>
         <MainLayout>{children}</MainLayout>
         <Analytics />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Contrast Color Palette",
+            description:
+              "A tool that generates a color palette with a contrast ratio. Perfect for designers and developers who need accessible color combinations.",
+            applicationCategory: "DesignApplication",
+            operatingSystem: "Any",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            author: {
+              "@type": "Person",
+              name: "imaimai17468",
+            },
+          }}
+        />
       </body>
     </html>
   );

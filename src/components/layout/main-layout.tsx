@@ -11,9 +11,9 @@ export const MainLayout = ({ children }: Props): React.ReactNode => {
       <Aurora />
       <div className="flex flex-col min-h-screen">
         <Header />
-        <div className="flex-grow flex">
+        <main className="flex-grow flex">
           <div className="flex-grow">{children}</div>
-        </div>
+        </main>
       </div>
     </>
   );
