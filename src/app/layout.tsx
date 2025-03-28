@@ -5,6 +5,7 @@ import { MainLayout } from "@/components/layout/main-layout";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://contrast-color-palette.vercel.app/"),
   title: "Contrast Color Palette",
   description:
     "A tool that generates a color palette with a contrast ratio. Perfect for designers and developers who need accessible color combinations.",
